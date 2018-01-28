@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0,uc-fitscreen=yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>鱼虾蟹</title>
+	<!-- miniMObile.css、js -->
+	<link rel="stylesheet" type="text/css" href="css/miniMobile.css"/>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/miniMobile.js"></script>
+
+	<!-- fonticon -->
+	<link rel="stylesheet" type="text/css" href="plugins/fonticon/iconfont.css" />
+	<!-- animate.css -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+	<style>
+		body {
+
+			/*perspective: 400;*/
+			/*-webkit-perspective: 400; !* Safari 和 Chrome *!*/
+		}
+		.ui-header {
+			position: relative;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			font-size: 0.4rem;
+		}
+		.ui_content {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+		.ui-footer ~ .ui_content {
+			bottom: 0.8rem;
+		}
+		.ui-header ~ .ui_content {
+			top: 0.8rem;
+		}
+		.flex {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: flex;
+		}
+		.flex_item_1 {
+			-webkit-flex: 1;
+			-moz-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+		}
+		.flex_item_1 {
+			-webkit-flex: 1;
+			-moz-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+		}
+		.flex_item_100px {
+			-webkit-flex: 0 0 100px;
+			-moz-flex: 0 0 100px;
+			-ms-flex: 0 0 100px;
+			flex: 0 0 100px;
+		}
+		.display_inline {
+			display: inline-block;
+		}
+		.text_algin_center {
+			text-align: center;
+		}
+		.text_algin_right {
+			text-align: right;
+		}
+		.padding10 {
+			padding: 10px;
+		}
+		.btns span {
+			margin-right: 10px;
+		}
+		.boxs {
+			position: relative;
+			margin-bottom: 1rem;
+			padding-top: 1.2rem;
+			/*height: 4.6rem;*/
+			/*transform-style: preserve-3d;*/
+			/*perspective: 400;*/
+			/*-webkit-perspective: 400; !* Safari 和 Chrome *!*/
+		}
+		.clock {
+			position: absolute;
+			left: 50%;
+			top: 10px;
+			width: 0.6rem;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			text-align: center;
+			margin-left: -0.3rem;
+			background: #ccf;
+			background: url("img/nz.png") no-repeat center;
+			background-size: 100%;
+			color: #fff;
+		}
+		.boxs_center {
+			position: relative;
+			width: 1.4rem;
+			height: 1.4rem;
+			margin: 0 auto 0;
+			transform: rotateY(8deg) rotateX(-6deg);
+			-webkit-rotateY(8deg) rotateX(-6deg);
+			-moz-rotateY(8deg) rotateX(-6deg);
+			-ms-rotateY(8deg) rotateX(-6deg);
+			transform-style: preserve-3d;
+			perspective: 800;
+			-webkit-perspective: 800; /* Safari 和 Chrome */
+
+		}
+		.boxs_center>div {
+			position: absolute;
+			height: 1.4rem;
+			width: 1.4rem;
+			text-align: center;
+			line-height: 1.4rem;
+		}
+		.boxs_center>div:nth-child(1) {
+			background: #f00;
+			transform: translate3d(0,0,0.7rem);
+		}
+		.boxs_center>div:nth-child(2) {
+			background: #ff0;
+			transform: rotateY(180deg) translate3d(0,0,0.7rem);
+			-webkit-transform: rotateY(180deg) translate3d(0,0,0.7rem);
+			-moz-transform: rotateY(180deg) translate3d(0,0,0.7rem);
+			-ms-transform: rotateY(180deg) translate3d(0,0,0.7rem);
+		}
+		.boxs_center>div:nth-child(3) {
+			background: #0f0;
+			transform: rotateY(90deg) translate3d(0,0,0.7rem);
+			-webkit-transform: rotateY(90deg) translate3d(0,0,0.7rem);
+			-moz-transform: rotateY(90deg) translate3d(0,0,0.7rem);
+			-ms-transform:rotateY(90deg) translate3d(0,0,0.7rem);
+		}
+		.boxs_center>div:nth-child(4) {
+			background: #0ff;
+			transform: rotateY(-90deg) translate3d(0,0,0.7rem);
+			-webkit-transform: rotateY(-90deg) translate3d(0,0,0.7rem);
+			-moz-transform: rotateY(-90deg) translate3d(0,0,0.7rem);
+			-ms-transform: rotateY(-90deg) translate3d(0,0,0.7rem);
+		}
+		.boxs_center>div:nth-child(5) {
+			background: #00f;
+			transform: rotateX(-90deg) translate3d(0,0,0.7rem);
+			-webkit-transform: rotateX(-90deg) translate3d(0,0,0.7rem);
+			-moz-transform: rotateX(-90deg) translate3d(0,0,0.7rem);
+			-ms-transform: rotateX(-90deg) translate3d(0,0,0.7rem);
+		 }
+		.boxs_center>div:nth-child(6) {
+			background: #f0f;
+			transform: rotateX(90deg) translate3d(0,0,0.7rem);
+			-webkit-transform: rotateX(90deg) translate3d(0,0,0.7rem);
+			-moz-transform: rotateX(90deg) translate3d(0,0,0.7rem);
+			-ms-transform: rotateX(90deg) translate3d(0,0,0.7rem);
+		}
+		.title {
+			height: 0.6rem;
+			line-height: 0.6rem;
+			text-align: center;
+			background: #ccf;
+		}
+		.balance {
+			padding-left: 10px;
+		}
+		.prize_list {
+			padding: 10px;
+		}
+		.prize_list>div {
+			position: relative;
+			height: 2.3rem;
+		}
+		.prize_list>div:nth-child(1) {
+			background: url("img/1.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div:nth-child(2) {
+			background: url("img/2.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div:nth-child(3) {
+			background: url("img/3.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div:nth-child(4) {
+			background: url("img/4.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div:nth-child(5) {
+			background: url("img/5.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div:nth-child(6) {
+			background: url("img/6.jpg") no-repeat center center;
+			-webkit-background-size: 2rem;
+			background-size: 2rem;
+		}
+		.prize_list>div strong {
+			position: absolute;
+			left: 0;
+			bottom: 8%;
+			width: 100%;
+			color: #fff;
+		}
+		.mask {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			z-index: 100;
+			background: #fff;
+		}
+		.none {
+			display: none!important;
+		}
+		.font_size3 {
+			font-size: 0.3rem;
+		}
+		.mask_close {
+			position: absolute;
+			right: 0;
+			height: 100%;
+			top: 0;
+			padding: 0 15px;
+		}
+		.animated_wx {
+			animation-iteration-count: infinite;
+			-webkit-animation-iteration-count: infinite;
+		}
+	</style>
+</head>
+
+<body class="fadeIn animated">
+	<header class="ui-header flex font_size3">
+		<div class="balance">余额：<span>10:00</span></div>
+		<div class="flex_item_1 text_algin_right btns">
+			<span class="display_inline">充值</span>
+			<span class="display_inline award_period_btn">开奖期数</span>
+			<span class="display_inline game_rules_btn">游戏规则</span>
+		</div>
+	</header>
+	<div class="ui_content">
+		<div class="boxs">
+			<div class="clock animated animated_wx wobble">
+				60
+			</div>
+			<div class="boxs_center">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+			</div>
+		</div>
+		<div class="title">下单</div>
+		<div class="prize_list">
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+			<div class="col-4 text_algin_center padding10"><strong>下单数:<span>0</span></strong></div>
+		</div>
+	</div>
+	<div class="mask game_rules_mask none">
+		<div class="ui-header text_algin_center">
+			活动规则
+			<a href="javascript:void(0);" class="mask_close"><i class="icon iconfont icon-close"></i></a>
+		</div>
+		<div class="ui_content">
+			活动规则
+		</div>
+
+	</div>
+	<div class="mask award_period_mask none">
+		<div class="ui-header text_algin_center">
+			开奖期数
+			<a href="javascript:void(0);" class="mask_close"><i class="icon iconfont icon-close"></i></a>
+		</div>
+		<div class="ui_content">
+			开奖期数
+		</div>
+
+	</div>
+	<script>
+		// 全局变量
+		var globalVar = {
+		    // 开奖期数按钮
+            award_period_btn: $(".award_period_btn"),
+			// 游戏规则按钮
+            game_rules_btn: $(".game_rules_btn"),
+			// 开奖期数蒙板
+            award_period_mask: $(".award_period_mask"),
+			// 游戏规则蒙蔽
+            game_rules_mask: $(".game_rules_mask"),
+			// 蒙板关闭按钮
+            mask_close_btn: $(".mask_close"),
+			// 闹钟时间
+            clockNum: $(".clock")
+		}
+
+		function initGameFn() {
+			var me = this;
+
+			// 初始化数据
+			me.init = function(){
+                me.clockTime();
+			}
+			// 闹钟时间设置
+			me.clockTime = function() {
+			    var _this = this;
+			    _this.timer = null;
+			    _this.millisec = 1000;
+			    _this.timeNum = 60;
+
+			    _this.timerSet = function(){
+
+                    _this.timer = setTimeout(function(){
+                        _this.timeNum --;
+                        if( _this.timeNum < 0) {
+                            clearTimeout(_this.timer)
+                            return;
+						}
+                        console.log(_this.timeNum);
+                        globalVar.clockNum.html(_this.timeNum);
+                        _this.timerSet();
+                    }, _this.millisec)
+				}
+                _this.timerSet();
+
+			}
+			// 初始化 所有的事件
+			me.allEvent = function(){
+			    // 点击开奖期数
+                globalVar.award_period_btn.on("click", function(){
+                    globalVar.award_period_mask.removeClass("none");
+				})
+				// 点击游戏规则
+                globalVar.game_rules_btn.on("click", function(){
+                    globalVar.game_rules_mask.removeClass("none");
+                })
+				// 点击关闭蒙板
+                globalVar.mask_close_btn.on("click", function(){
+                    $(this).parents(".mask").addClass("none");
+				})
+			}
+		}
+
+		var initGame = new initGameFn();
+        initGame.init();
+        initGame.allEvent();
+
+
+
+
+	</script>
+</body>
+</html>
